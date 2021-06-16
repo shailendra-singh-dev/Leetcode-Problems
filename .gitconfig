@@ -1,0 +1,10 @@
+#[user]
+	name = Shailendra Singh
+	email = shail.friendly@gmail.com
+
+#[color]
+	ui = auto
+
+#[core]
+    editor = vim
+    compression = 9
