@@ -7,14 +7,13 @@ public class TrappingRainWater {
 
 	public static void test() {
 		int[] height = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
-		int volume = new TrappingRainWater().trapV3(height);
+		int volume = new TrappingRainWater().trapV4(height);
 		System.out.println("volume:" + volume);
 	}
 
 	/**
 	 * https://www.youtube.com/watch?v=C8UjlJZsHBw
 	 */
-
 	// 1st Optimal Approach O(N) SPACE
 	public int trap(int[] height) {
 		int n = height.length;
@@ -94,9 +93,33 @@ public class TrappingRainWater {
 		int volume = 0;
 		for (int i = 0; i < height.length; i++) {
 			int space = Math.min(maxLeft[i], maxRight[i]);
-			volume += Math.max(0, space - height[i]);
+			volume += (space - height[i]);
 		}
 		return volume;
+	}
+	
+	public int trapV4(int[] height) {
+		int left = 0, right = height.length - 1;
+		int res = 0;
+		int leftMax = 0, rightMax = 0;
+		while (left <= right) {
+			if (height[left] <= height[right]) {
+				if (height[left] >= leftMax) {
+					leftMax = height[left];
+				} else {
+					res += leftMax - height[left];
+				}
+				left++;
+			} else {
+				if (height[right] >= rightMax) {
+					rightMax = height[right];
+				} else {
+					res += rightMax - height[right];
+				}
+				right--;
+			}
+		}
+		return res;
 	}
 
 }

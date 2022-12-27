@@ -25,9 +25,15 @@ public class MergeTwoSortedLists {
 		node4.next= node5;
 		node5.next= node6;
 		
-		Node result = mergeTwoLists(node1,node4);
-		Node.printList(result);
+		Node result = mergeTwoListsV2(node1,node4);
+		Node.printList(result);		
 	}
+	
+	private void swap2(Node left, Node right) {
+		Node temp=left.next;
+		left.next = right.next;
+		right.next = temp;
+	} 
 	
 	/**
 	 * Time Complexity: O(m+n) where m,n are list sizes.
@@ -69,17 +75,47 @@ public class MergeTwoSortedLists {
 	 * Space Complexity: O(1) 
 	 */
 	public Node mergeTwoListsV2(Node left, Node right) {
-		if(left == null)
+		if (left == null)
 			return right;
-		if(right == null)
+		if (right == null)
 			return left;
-		if(right.data < left.data)
+		if (right.data < left.data)
 			swap(left, right);
 		
+		Node result = left;
+		while (left != null && right != null) {
+			Node temp = null;
+			while (left.data <= right.data) {
+				left = left.next;
+				temp = left;
+			}
+			if(null != temp)
+				temp.next = right;
+			swap(left, right);
+		}
+		return result;
 	}
 	
 	private void swap(Node left, Node right) {
-		
-	}
+		Node temp = left.next;
+		left.next = right.next;
+		right.next = temp;
+	} 
+	
+	/***
+	 * Time Complexity: O(m+n) where m,n are list sizes.
+	 * Space Complexity: O(1)
+	 */
+	public Node mergeTwoListsV3(Node l1, Node l2){
+		if(l1 == null) return l2;
+		if(l2 == null) return l1;
+		if(l1.data < l2.data){
+			l1.next = mergeTwoListsV3(l1.next, l2);
+			return l1;
+		} else{
+			l2.next = mergeTwoListsV3(l1, l2.next);
+			return l2;
+		}
+    }
 	
 }

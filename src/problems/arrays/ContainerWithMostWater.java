@@ -10,7 +10,7 @@ public class ContainerWithMostWater {
 
 	public static void test() {
 		int[] a = new int[] {1,8,6,2,5,4,8,3,7};
-		int maxArea= maxAreaV2(a);
+		int maxArea= maxAreaV1(a);
 		System.out.println("maxArea:"+ maxArea);
 	}
 	

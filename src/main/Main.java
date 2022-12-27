@@ -1,19 +1,67 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
 import main.utilities.TreeNode;
-import problems.arrays.MergeTwoSortedArraysWithoutExtraSpace;
-import problems.linked_list.AddTwoNumbers;
-import problems.linked_list.MergeTwoSortedLists;
+import problems.arrays.GlobalAndLocalInversions;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new MergeTwoSortedLists().test();	
+		new GlobalAndLocalInversions().test();
 	}
+	
+	static int merge(int[] nums, int low, int mid, int high) {
+        int cnt = 0;
+        int j = mid; 
+        for(int i = low;i<=mid-1;i++) {
+            while(j<=high && nums[i] > (2 * (long) nums[j])) {
+                j++;
+            }
+            cnt += (j - mid);
+        }
+        
+        //int[] temp = new int[nums.length]; 
+        ArrayList<Integer> temp = new ArrayList();
+        int left = low, right = mid;
+        int k=low;
+        while(left <= mid-1 && right<=high) {
+            if(nums[left]<=nums[right]) {
+            	temp.add(nums[left++]);
+                //temp[k++] = nums[left++]; 
+            }
+            else {
+            	temp.add(nums[right++]);
+            	//temp[k++] = nums[right++];
+            }
+        }
+        
+        while(left<=mid-1) {
+        	//temp[k++] = nums[left++]; 
+        	temp.add(nums[left++]);
+        }
+        while(right<=high) {
+        	//temp[k++] = nums[right++];
+        	temp.add(nums[right++]);
+        }
+        for(int i = low; i<=high;i++) {
+            //nums[i] = temp[i];
+        	nums[i] = temp.get(i-low);
+        }
+        return cnt; 
+    }
+	
+    static int mergeSort(int[] nums, int low, int high) {
+        if(low>=high) return 0; 
+        int mid = (low + high) / 2;
+        int inv = mergeSort(nums, low, mid); 
+        inv += mergeSort(nums, mid+1, high); 
+        inv += merge(nums, low, mid+1, high); 
+        return inv; 
+    }
 
 	private static void constructBinaryTree() {
 		TreeNode root = new TreeNode(0);

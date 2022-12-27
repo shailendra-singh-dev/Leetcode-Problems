@@ -1,17 +1,82 @@
 package problems.graph;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class UniquePathsII {
 
 	public void test() {
-		int[][] matrix1 = new int[][] { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
-		int[][] matrix2 = new int[][] { { 0, 0, 1, 0 }, { 1, 0, 1, 0 }, { 0, 0, 0, 0 } };
-
-		int paths = uniquePathsWithObstacles(matrix1);
-		System.out.println("uniquePathsWithObstacles:" + paths);
+		int[][] matrix1 = new int[][] { 
+			{ 0, 0, 0 }, 
+			{ 0, 1, 0 }, 
+			{ 0, 0, 0 } };
+		int[][] matrix2 = new int[][] { 
+			{ 0, 0, 1, 0 }, 
+			{ 1, 0, 1, 0 }, 
+			{ 0, 0, 0, 0 } };
+		int[][] matrix = new int[][] { 
+				{ 0, 0, 0 }, 
+				{ 0, 1, 0 }, 
+				{ 0, 0, 0 } };	
+//		int paths = uniquePathsWithObstacles(matrix1);
+		int m = 3, n = 2;
+		int[][] dpMatrix = new int[][] { 
+			{ -1, -1, -1 }, 
+			{ -1, -1, -1 }, 
+			{ -1, -1, -1 } };  
+		int paths = uniquePathsV1(m,n,0,0);
+		System.out.println("paths:" + paths);
+		paths = uniquePathsV2(m,n,0,0, dpMatrix);
+		System.out.println("paths:" + paths);
+		paths = (int)uniquePathsV3(m,n);
+		System.out.println("paths:" + paths);
+		
+	}
+	
+	/**Recursion
+	 * https://leetcode.com/problems/unique-paths/
+	 */
+	public int uniquePathsV1(int m, int n, int i, int j) {
+		if (i >= m || j >= n) {
+			return 0;
+		}
+		if (i == m - 1 || j == n - 1) {
+			return 1;
+		}
+		else
+			return uniquePathsV1(m, n, i + 1, j) + uniquePathsV1(m, n, i, j + 1);
+	}
+	
+	/**Dynamic Programming.
+	 * https://leetcode.com/problems/unique-paths/
+	 */
+	public int uniquePathsV2(int m, int n, int i, int j, int[][] array) {
+		if (i >= m || j >= n) {
+			return 0;
+		}
+		if (i == m - 1 || j == n - 1) {
+			return 1;
+		}
+		if(array[i][j] != -1)
+			return array[i][j];
+		return array[i][j] = uniquePathsV2(m, n, i + 1, j, array) + uniquePathsV2(m, n, i, j + 1, array);
 	}
 
+	/**Combinatrics
+	 * https://leetcode.com/problems/unique-paths/
+	 */
+	public int uniquePathsV3(int m, int n) {
+		int N = m + n - 2;//3
+		int r = m - 1; //2
+		double res = 1;
+		for (int i = 1; i <= r; i++) {
+			int x=N - r + i;
+			System.out.println("x:"+x +",i:"+ i);
+			res *= (N - r + i) / i;
+		}
+		return (int)res;
+	}
+	
+	
 	private int uniquePathsWithObstacles(int[][] matrix) {
 		int m = matrix.length;
 		int n = matrix[0].length;
