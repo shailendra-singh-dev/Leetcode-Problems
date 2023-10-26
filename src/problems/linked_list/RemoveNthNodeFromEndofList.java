@@ -3,6 +3,12 @@ package problems.linked_list;
 import main.utilities.LinkedList;
 import main.utilities.Node;
 
+/**
+ * https://leetcode.com/problems/remove-nth-node-from-end-of-list/?envType=list&envId=9p9tccj2
+ * https://takeuforward.org/data-structure/remove-n-th-node-from-the-end-of-a-linked-list/
+ * @author shailendra
+ *
+ */
 public class RemoveNthNodeFromEndofList {
 	
 	public void test() {

@@ -6,12 +6,12 @@ import java.util.PriorityQueue;
 import java.util.Stack;
 
 import main.utilities.TreeNode;
-import problems.arrays.GlobalAndLocalInversions;
+import problems.linked_list.MiddleOfTheLinkedList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new GlobalAndLocalInversions().test();
+		new MiddleOfTheLinkedList().test();
 	}
 	
 	static int merge(int[] nums, int low, int mid, int high) {

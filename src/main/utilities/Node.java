@@ -7,17 +7,20 @@ public class Node implements Comparable<Node> {
 	public Node previous;
 	// data carried by this node.
 	// could be of any type you need.
-	public int data;
+	public int data =-1;
 
 	// Node constructor
 	public Node(int _data) {
 		next = null;
 		this.data = _data;
 	}
+	public Node() {
+		next = null;
+	}
 
 	@Override
 	public String toString() {
-		return "[" + data + "]";
+		return data == -1 ? "[]" : "[" + data + "]";
 	}
 
 	@Override
