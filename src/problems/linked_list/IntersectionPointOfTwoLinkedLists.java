@@ -26,6 +26,11 @@ public class IntersectionPointOfTwoLinkedLists {
 		Node.printList(result);		
 	}
 	
+	/**
+	 * Solution: Two Pointer approach
+	 * Time Complexity: O(2*max(length of list1,length of list2))
+	 * Space Complexity: O(1)
+	 * */
 	public Node getIntersectionNode(Node headA, Node headB) {
 		if (headA == null || headB == null) {
 			return null;

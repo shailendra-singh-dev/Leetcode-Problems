@@ -6,12 +6,12 @@ import java.util.PriorityQueue;
 import java.util.Stack;
 
 import main.utilities.TreeNode;
-import problems.linked_list.MiddleOfTheLinkedList;
+import problems.linked_list.DeleteNodeInALinkedList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new MiddleOfTheLinkedList().test();
+		new DeleteNodeInALinkedList().test();
 	}
 	
 	static int merge(int[] nums, int low, int mid, int high) {
