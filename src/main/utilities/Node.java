@@ -33,6 +33,10 @@ public class Node implements Comparable<Node> {
 	}
 
 	@Override
+	public int hashCode() {
+		return data;
+	}
+	@Override
 	public int compareTo(Node obj) {
 		if (null == obj)
 			return 0;
