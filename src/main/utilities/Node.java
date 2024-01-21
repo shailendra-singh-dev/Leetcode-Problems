@@ -5,6 +5,7 @@ public class Node implements Comparable<Node> {
 	// or null if there isn't one.
 	public Node next;
 	public Node previous;
+	public Node bottom;
 	// data carried by this node.
 	// could be of any type you need.
 	public int data =-1;

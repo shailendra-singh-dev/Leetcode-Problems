@@ -1,10 +1,10 @@
 package main;
 
-import problems.linked_list.ReverseNodesInkGroup;
+import problems.linked_list.FlatteningALinkedList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new ReverseNodesInkGroup().test();
+		new FlatteningALinkedList().test();
 	}
 }
