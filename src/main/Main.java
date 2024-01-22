@@ -1,10 +1,10 @@
 package main;
 
-import problems.linked_list.FlatteningALinkedList;
+import problems.tree.bfs.BinaryTreeLevelOrderTraversal;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new FlatteningALinkedList().test();
+		new BinaryTreeLevelOrderTraversal().test();
 	}
 }
