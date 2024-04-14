@@ -13,6 +13,21 @@ import main.utilities.TreeNode;
  */
 public class ValidateBinarySearchTree {
 	
+	public boolean isBST(TreeNode root) {
+			return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+	}
+	
+	private boolean isValidBST(TreeNode root, long minValue, long maxValue) {
+		if(null == root) {
+			return true;	
+		}
+		if(minValue > root.data || maxValue < root.data) {
+			return false;
+		}
+		return isValidBST(root.left, minValue, root.data) && 
+				isValidBST(root.right, root.data, maxValue);
+	}
+
 	public void test() {
 		/**
 		 *           2
@@ -80,7 +95,7 @@ public class ValidateBinarySearchTree {
 		*/
 		
 		
-		System.out.println(isValidBSTUsingInOrderTraversalIterative(root));
+		System.out.println(isBST(root));
 	}
 	
 	private static boolean isValidBSTRecursive(TreeNode root) {

@@ -4,6 +4,11 @@ import java.util.Stack;
 
 import main.utilities.TreeNode;
 
+/**
+ * https://takeuforward.org/data-structure/maximum-depth-of-a-binary-tree/
+ * https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+ *
+ */
 public class MaximumDepthOfBinaryTree {
 
 	public void test() {
@@ -30,6 +35,10 @@ public class MaximumDepthOfBinaryTree {
         return getDepth(root);        
     }
 	
+	/**
+	 * Time Complexity: O(N).
+	 * Space Complexity: O(1) Extra Space + O(H) Recursion Stack space, where “H”  is the height of the binary tree.
+	 */
 	public int getDepth(TreeNode root) {
 		if (root == null) {
 			return 0;
@@ -41,8 +50,8 @@ public class MaximumDepthOfBinaryTree {
             return 1 + getDepth(root.left);
         }
 		return Math.max(1 + getDepth(root.left), 1 + getDepth(root.right)) ;
-	}
-    
+	}   
+	
 	public int getDepthV1(TreeNode root) {
 		if (root == null) {
 			return 0;
