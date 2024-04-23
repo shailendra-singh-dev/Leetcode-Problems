@@ -3,6 +3,12 @@ package problems.linked_list;
 import main.utilities.LinkedList;
 import main.utilities.Node;
 
+/**
+ * https://leetcode.com/problems/palindrome-linked-list/ 
+   https://takeuforward.org/data-structure/check-if-given-linked-list-is-plaindrome/ 
+ * @author shailendra
+ *
+ */
 public class PalindromeLinkedList {
 	
 	public void test() {

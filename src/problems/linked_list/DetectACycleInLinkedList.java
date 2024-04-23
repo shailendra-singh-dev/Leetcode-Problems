@@ -2,6 +2,13 @@ package problems.linked_list;
 
 import main.utilities.Node;
 
+
+/**
+ * https://leetcode.com/problems/linked-list-cycle 
+   https://takeuforward.org/data-structure/detect-a-cycle-in-a-linked-list/ 
+ * @author shailendra
+ *
+ */
 public class DetectACycleInLinkedList {
 		
 	public void test() {

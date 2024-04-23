@@ -3,6 +3,11 @@ package problems.linked_list;
 import main.utilities.LinkedList;
 import main.utilities.Node;
 
+/**
+ * https://takeuforward.org/data-structure/flattening-a-linked-list/#google_vignette 
+ * @author shailendra
+ *
+ */
 public class FlatteningALinkedList {
 	
 	public void test() {

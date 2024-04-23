@@ -2,6 +2,13 @@ package problems.linked_list;
 
 import main.utilities.Node;
 
+
+/**
+ * https://leetcode.com/problems/intersection-of-two-linked-lists/description/ 
+   https://takeuforward.org/data-structure/find-intersection-of-two-linked-lists/ 
+ * @author shailendra
+ *
+ */
 public class IntersectionPointOfTwoLinkedLists {
 
 	public void test() {
