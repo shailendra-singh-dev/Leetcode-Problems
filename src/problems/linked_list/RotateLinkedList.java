@@ -11,7 +11,7 @@ public class RotateLinkedList {
       Space Complexity: O(1)
       Reason: No extra data structure is used for computation. 
 	 */
-	public Node rotateRight(Node head,int k) {
+	public static Node rotateRight(Node head,int k) {
 	    if(head == null||head.next == null||k == 0) return head;
 	    //calculating length
 	    Node temp = head;
