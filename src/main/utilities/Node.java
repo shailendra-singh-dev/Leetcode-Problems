@@ -7,6 +7,7 @@ public class Node implements Comparable<Node> {
 	public Node previous;
 	public Node child;
 	public Node bottom;
+	public Node random;
 	
 	// data carried by this node.
 	// could be of any type you need.
