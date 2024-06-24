@@ -8,7 +8,8 @@ public class Node implements Comparable<Node> {
 	public Node child;
 	public Node bottom;
 	public Node random;
-	
+	public int key;
+	public int value;
 	// data carried by this node.
 	// could be of any type you need.
 	public int data =-1;
@@ -18,6 +19,12 @@ public class Node implements Comparable<Node> {
 		next = null;
 		this.data = _data;
 	}
+	
+	public Node(int key,int value) {
+		this.key = key;
+		this.value = value;
+	}
+	
 	public Node() {
 		next = null;
 		previous =null;

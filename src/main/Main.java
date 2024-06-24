@@ -1,11 +1,11 @@
 package main;
 
-import problems.linked_list.FlattenAMultilevelLinkedList;
+import problems.linked_list.LRUCache;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new FlattenAMultilevelLinkedList().test();
+		new LRUCache(2).test();
 	}
 	
 	
