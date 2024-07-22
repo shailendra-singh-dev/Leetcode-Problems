@@ -1,11 +1,11 @@
 package main;
 
-import problems.linked_list.LRUCache;
+import problems.binary_search.LowerBound;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new LRUCache(2).test();
+		new LowerBound().test();
 	}
 	
 	
