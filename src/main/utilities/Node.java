@@ -31,6 +31,11 @@ public class Node implements Comparable<Node> {
 		child=null;
 		bottom =null;
 	}
+	
+	public Node(int _key,int _value){
+         key = _key;
+         value = _value;
+    } 
 
 	@Override
 	public String toString() {
