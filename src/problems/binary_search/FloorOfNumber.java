@@ -6,7 +6,7 @@ package problems.binary_search;
 public class FloorOfNumber {
 	
 	public int getFloor(int[] a, int x) {
-		int pos = a.length;
+		int pos = -1;
 		int low = 0, high = a.length - 1;
 		int mid = 0;
 		while (low <= high) {

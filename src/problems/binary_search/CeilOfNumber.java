@@ -7,7 +7,7 @@ public class CeilOfNumber {
 	
 	// Lower bound
 	public int getCeil(int[] a, int x) {
-		int pos = a.length;
+		int pos = -1;
 		int low = 0, high = a.length - 1;
 		int mid = 0;
 		while (low <= high) {
