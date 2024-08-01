@@ -1,5 +1,9 @@
 package problems.binary_search;
 
+/**
+ * https://leetcode.com/problems/search-insert-position/
+ * https://takeuforward.org/arrays/search-insert-position/
+ */
 public class SearchInsertPosition {
 
 	public int searchInsert(int[] a, int target) {

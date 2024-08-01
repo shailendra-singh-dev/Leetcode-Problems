@@ -2,8 +2,17 @@ package problems.binary_search;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
+ */
 public class FirstAndLastPositionOfElementInSortedArray {
 	
+	//For both 
+	/**
+	 * Time Complexity: O(logN), where N = size of the given array.
+	   Reason: We are basically using the Binary Search algorithm.		
+	   Space Complexity: O(1) as we are using no extra space.
+	 */
 	public int getFirstPosition(int[] a, int target) {
 		int first = -1;
 		int low = 0, high = a.length - 1;
