@@ -2,6 +2,7 @@ package problems.binary_search;
 
 /**
  * https://takeuforward.org/data-structure/k-th-element-of-two-sorted-arrays/
+ * https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
  */
 public class KthElementOfTwoSortedArrays {
 

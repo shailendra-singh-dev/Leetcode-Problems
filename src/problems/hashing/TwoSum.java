@@ -1,4 +1,4 @@
-package problems.arrays;
+package problems.hashing;
 
 import java.util.ArrayList;
 import java.util.Arrays;

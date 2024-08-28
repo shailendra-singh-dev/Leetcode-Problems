@@ -1,11 +1,11 @@
 package main;
 
-import problems.binary_search.FindMinimumInRotatedSortedArray;
+import problems.binary_search.SingleElementInASortedArray;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new FindMinimumInRotatedSortedArray().test();
+		new SingleElementInASortedArray().test();
 	}
 
 }
