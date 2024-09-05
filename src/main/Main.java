@@ -1,11 +1,11 @@
 package main;
 
-import problems.binary_search.SingleElementInASortedArray;
+import problems.hashing.LargestSubarrayWithZeroSum;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new SingleElementInASortedArray().test();
+		new LargestSubarrayWithZeroSum().test();
 	}
 
 }
