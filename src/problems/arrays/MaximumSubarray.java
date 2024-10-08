@@ -7,16 +7,33 @@ import java.util.Arrays;
  * https://leetcode.com/problems/maximum-subarray/
  */
 public class MaximumSubarray {
-	
+
 	public void test() {
-		int[] a= {-2,1,-3,4,-1,2,1,-5,4};
-		System.out.println(maxSubArray(a));
-		System.out.println(getMaxSubArray(a));
-		
+		int[] a = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		System.out.println(maxSubArrayV2(a));
+		//System.out.println(getMaxSubArray(a));
 	}
-	
+
 	/**
-	 * It will return max sum of sub array irrespective of positive/negative sum. 
+	 * .Time Complexity: O(N), where N = size of the array. Reason: We are using a single loop running N times.
+	    Space Complexity: O(1) as we are not using any extra space.
+	 */
+	public int maxSubArrayV2(int[] nums) {
+		if (nums == null || nums.length == 0)
+			return 0;
+		int sum = 0, max = Integer.MIN_VALUE;
+		for (int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+			max = Math.max(sum, max);
+			if (sum < 0) {
+				sum = 0;
+			}
+		}
+		return max;
+	}
+
+	/**
+	 * It will return max sum of sub array irrespective of positive/negative sum.
 	 */
 	public int maxSubArray(int[] nums) {
 		if (nums == null || nums.length == 0)
@@ -28,7 +45,7 @@ public class MaximumSubarray {
 		}
 		return max;
 	}
-	
+
 	/**
 	 * It will return sub array containing positive sum.
 	 */
@@ -45,11 +62,11 @@ public class MaximumSubarray {
 				end = i;
 			}
 		}
-		ArrayList<Integer> result= new ArrayList();
-		for (int i = start; i<= end; i++) {
+		ArrayList<Integer> result = new ArrayList();
+		for (int i = start; i <= end; i++) {
 			result.add(nums[i]);
 		}
 		return result;
 	}
-	
+
 }
